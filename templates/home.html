@@ -1,0 +1,28 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block body_block %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<div class="hero-section" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.15) 65%), url('{% static 'images/homephoto.png' %}');">
+    <div class="hero-content">
+        <h1>Good Food</h1>
+        <h1 class="highlight">Good Mood</h1>
+        <p>Delicious food, fresh ingredients,<br>made with love.</p>
+        
+        <div class="hero-buttons">
+            <a href="/managemenu/" class="btn1">View Menu</a>
+            <a href="#" class="btn2">Order Now</a>
+        </div>
+    </div>
+</div>
+<div class="features">
+    <h2>Why Choose Us?</h2>
+    <ul>
+        <li>🍔 Fresh & Tasty Food</li>
+        <li>⚡ Fast Home Delivery</li>
+        <li>💰 Best Price & Offers</li>
+        <li>🌿 100% Quality & Hygienic</li>
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp - Foodie Hub</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+  </head>
+  <body>
+    <img src="{% static 'images/signup1.png' %}" alt="Foodie Hub Banner" />
+
+    <div class="signup-container">
+      <h1>Welcome To The SignUp/Register Page</h1>
+      <form method="POST">
+        {% csrf_token %} {{ form.as_p }}
+        <input type="submit" onclick="return confirm('Successfully Registered');"  value="SignUp"/>
+      </form>
+    </div>
+  </body>
+</html>

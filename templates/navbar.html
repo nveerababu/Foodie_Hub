@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/fav55.png' %}">
+</head>
+<body>
+<nav class="nav">
+    <div class="logo">
+    <a href="/">
+        <img src="{% static 'images/foodiehublogo.png' %}" alt="Logo image">
+    </a>
+   </div>
+    <div class="menubar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/managemenu">Menu</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contactus">Contact Us</a></li>
+        </ul>
+        </div>
+    <div class="profile">
+  <ul>
+    {% if user.is_authenticated %}
+      <li><a href="#">Profile ({{ user.username }})</a></li>
+      <li><a href="/logout/">LogOut</a></li>
+    {% else %}
+      <li><a href="/accounts/login/">Login</a></li>
+      <li><a href="/signup/">SignIn</a></li>
+    {% endif %}
+  </ul>
+</div>
+</nav>   
+{% block body_block %}
+{% endblock %}
+</body>
+</html>

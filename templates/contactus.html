@@ -1,0 +1,64 @@
+{% extends 'navbar.html' %}
+{% block body_block %}
+<style>
+    .contact-wrapper {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 20px;
+        font-family: Arial, sans-serif;
+    }
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 25px;
+    }
+    .contact-info {
+        background: #fdfdfd;
+        padding: 40px;
+        border-radius: 12px;
+        border: 1px solid #eee;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .contact-form input, .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
+    .btn-submit {
+        background:  #0d6efd;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+</style>
+
+<div class="contact-wrapper">
+    <h2 style="color: #222; text-align: center;">Get in Touch With FoodieHub</h2><br>
+    <p style="text-align: center; color: #666;">Got questions, feedback, or cravings? Reach out and we'll reply right away.</p>
+
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h3 style="color:  #0d6efd; margin-top: 0;">Quick Contact</h3>
+            <p style="padding:10px;" ><strong>📍 Location:</strong> Guntur, Andhra Pradesh</p>
+            <p style="padding:10px;"><strong>📞 Phone:</strong> +91 98765 43210</p>
+            <p style="padding:10px;"><strong>✉️ Email:</strong> support@foodiehub.com</p>
+            <p style="padding:10px;"><strong>⏰ Hours:</strong> 10:00 AM - 12:00 AM (All Days)</p>
+        </div>
+
+        <form class="contact-form" method="POST">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="4" placeholder="How can we help you?" required></textarea>
+            <button type="submit"  onclick="return confirm('Your Message Successfully Sended');" class="btn-submit">Send Message</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

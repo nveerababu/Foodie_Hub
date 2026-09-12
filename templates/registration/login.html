@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %} 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
+    <title>Document</title>
+</head>
+<body>
+   <img src="{% static '/images/login33.png' %}" alt="Logo" width="150"/>
+<div class="login">
+  <h1>Welcome To The Login Page</h1>
+  <form method="POST">
+    {{form.as_p}} 
+    {%csrf_token%}
+    <input type="submit"  onclick="return confirm('Welcome back, You are successfully logged in.');" value="Login" />
+    <p class="signup-text">
+    Didn't have an account? <a href="/signup/" class="signbtn">SignUp</a>
+</p>
+  </form>
+</div> 
+</body>
+</html>

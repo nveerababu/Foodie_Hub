@@ -1,0 +1,30 @@
+{% extends 'navbar.html' %}
+ {% load static %} 
+ {% block body_block %}
+ <style>
+    h4{
+        text-align: center;
+        margin: 150px 280px;
+        border-radius: 90px;
+        background: black;
+        color: white;
+        padding: 20px;
+    }
+    h4 .btn {
+        border-radius: 90px;
+        background-color: #0d6efd;
+        color: #ffffff;
+        padding: 10px;
+        text-decoration: none;
+
+    }
+ </style>
+
+ <div class="msg">
+<h4 class="ll">👋 You have been logged out!<br>
+    Thank you for visiting, and your session has ended safely.<br>
+    Log in again whenever you're ready to place your next order!<br><br>
+    <a href="/accounts/login" class="btn">Again Login</a>
+</h4>
+</div>
+{% endblock %}
